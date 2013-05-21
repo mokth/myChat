@@ -1,0 +1,62 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Node.js Chat Server</title>
+    <meta name="author" content="Stephen Braitsch">
+    <meta name="description" content="A Node.js Chat Server using Socket.IO over multiple subdomains">
+    <link rel="stylesheet" href="/vendor/boot.css">
+    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="/vendor/jquery.alerts.css">
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-1890531-10']);
+        _gaq.push(['_setDomainName', 'braitsch.io']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+            <ul class="nav pull-left">
+                <div class="brand">Node.js & Socket.IO Chat Server</div>
+            </ul>
+            <ul class="nav pull-right">
+                <li><a href="#" id="connected"></a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="container">
+    <div id="send-message" class="well span4">
+        <h2>Say Something</h2>
+        <hr>
+        <label>Your Name </label>
+        <input type="text" name="name" id="name" class="span4">
+        <button id="btn-connect" class="btn btn-primary"><i class="icon-pencil icon-white"></i>Connect</button>
+        <label>Your Message</label>
+        <textarea rows="6" name="msg" id="msg" class="span4"></textarea>
+        <button id="btn-send" class="btn btn-primary"><i class="icon-pencil icon-white"></i>Send it !</button>
+        <button id="btn-alert" class="btn btn-primary"><i class="icon-pencil icon-white"></i>Alert</button>
+    </div>
+    <div id="messages" class="well span4">
+        <h2>Conversation</h2>
+        <hr>
+        <div id="incoming"></div>
+    </div>
+</div>
+<script src="/vendor/jquery.min.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/chat/index.js"></script>
+<script src="/vendor/jquery.alerts.js"></script>
+<script src="/vendor/jquery-title.js"></script>
+
+</body>
+</html>
